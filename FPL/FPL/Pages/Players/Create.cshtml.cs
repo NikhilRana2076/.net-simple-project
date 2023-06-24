@@ -37,9 +37,9 @@ namespace FPL.Pages.Players
             {
                 String connectionString = "Data Source=.\\sqlexpress;Initial Catalog=fpl;Integrated Security=True";
                 using (SqlConnection connection = new SqlConnection(connectionString))
-                {
+                  {
                     connection.Open();
-                    String sql = "INSERT INTO players " +
+                    String sql = "INSERT INTO clients " +
                                     "(name, email, phone, fpl_id, semester) VALUES " +
                                     "(@name, @email, @phone, @fpl_id, @semester);";
 
@@ -64,6 +64,8 @@ namespace FPL.Pages.Players
             playerInfo.name = ""; playerInfo.email = ""; playerInfo.phone = "";
             playerInfo.fpl_id = ""; playerInfo.semester = "";
             successMessage = "New Player Added Correctly";
+
+            Response.Redirect("/Players/Index");
 
         }
     }

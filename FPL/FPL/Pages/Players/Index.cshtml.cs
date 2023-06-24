@@ -42,7 +42,7 @@ namespace FPL.Pages.Players
 
             catch (Exception ex)
             {
-
+                Console.WriteLine("Exception: " + ex.ToString());
             }
         }
 
